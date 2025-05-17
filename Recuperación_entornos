@@ -1,0 +1,103 @@
+/**
+ * Clase que representa un cuadrado y permite calcular su área.
+ * Autor: [Tu Nombre]
+ * Versión: 1.0
+ * Esta clase permite definir un cuadrado a partir de dos lados y calcular su área.
+ */
+public class Cuadrado {
+    private double ladoA, ladoB;
+
+    /**
+     * Constructor de la clase Cuadrado.
+     * @param ladoA Longitud del primer lado (en unidades)
+     * @param ladoB Longitud del segundo lado (en unidades)
+     */
+    public Cuadrado(double ladoA, double ladoB) {
+        this.ladoA = ladoA;
+        this.ladoB = ladoB;
+    }
+
+    /**
+     * Método para calcular el área del cuadrado.
+     * No recibe parámetros.
+     * @return Área del cuadrado (en unidades cuadradas), calculada como ladoA * ladoB
+     */
+    public double calcularArea() {
+        return ladoA * ladoB;
+    }
+}
+
+/**
+ * Clase que representa un círculo y permite calcular su área.
+ * Autor: [Tu Nombre]
+ * Versión: 1.0
+ * Esta clase modela un círculo a partir de su radio y calcula su área.
+ */
+public class Circulo {
+    private double radio;
+
+    /**
+     * Constructor de la clase Circulo.
+     * @param radio Radio del círculo (en unidades)
+     */
+    public Circulo(double radio) {
+        this.radio = radio;
+    }
+
+    /**
+     * Método para calcular el área del círculo.
+     * No recibe parámetros.
+     * @return Área del círculo (en unidades cuadradas), calculada con la fórmula π * radio^2
+     */
+    public double calcularArea() {
+        return 3.14 * Math.pow(radio, 2);
+    }
+}
+
+/**
+ * Clase que proporciona funciones matemáticas como el cálculo de diferencias.
+ * Autor: [Tu Nombre]
+ * Versión: 1.0
+ * Esta clase incluye métodos estáticos para operaciones matemáticas, como restar áreas.
+ */
+public class Calculadora {
+
+    /**
+     * Método para calcular la diferencia entre dos áreas (cuadrado y círculo).
+     * @param areaCuadrado Área del cuadrado (en unidades cuadradas)
+     * @param areaCirculo Área del círculo (en unidades cuadradas)
+     * @return Diferencia de áreas: área del cuadrado menos área del círculo (en unidades cuadradas)
+     */
+    public static double calcularDiferencia(double areaCuadrado, double areaCirculo) {
+        return areaCuadrado - areaCirculo;
+    }
+}
+
+/**
+ * Clase principal que ejecuta el programa para calcular y mostrar áreas de figuras.
+ * Autor: [Tu Nombre]
+ * Versión: 1.0
+ * Esta clase contiene el método main que crea objetos de figuras geométricas,
+ * calcula sus áreas y muestra los resultados en consola.
+ */
+public class Main {
+    public static void main(String[] args) {
+        // Creación de un cuadrado con lados de 3 unidades
+        Cuadrado cuadrado1 = new Cuadrado(3, 3);
+        
+        // Creación de un círculo con radio de 3 unidades
+        Circulo circulo1 = new Circulo(3);
+
+        // Cálculo de áreas
+        double areaCuadrado = cuadrado1.calcularArea();
+        double areaCirculo = circulo1.calcularArea();
+
+        // Cálculo de la diferencia de áreas
+        double diferencia = Calculadora.calcularDiferencia(areaCuadrado, areaCirculo);
+
+        // Imprimir resultados en consola
+        System.out.println("Área del cuadrado: " + areaCuadrado);
+        System.out.println("Área del círculo: " + areaCirculo);
+        System.out.println("Diferencia de áreas: " + diferencia);
+    }
+}
